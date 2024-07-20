@@ -18,9 +18,12 @@ build:
 
 	cp bin/myos.bin bin/boot/myos.bin
 	cp grub.cfg bin/boot/grub.cfg
-	grub-mkrescue -o myos.iso bin/boot
+	grub-mkimage -v -o myos.iso ./bin/boot
 
 clean:
 	rm -rf bin
 
+update:
+	clean
+	Push.bat
 run:
